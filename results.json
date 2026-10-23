@@ -1,0 +1,321 @@
+{
+  "generated_at": "2026-10-23T18:21:14Z",
+  "demo_workflow": "onboarding (approve path): create account -\u003e welcome email -\u003e approval signal -\u003e provision -\u003e day-2 check-in -\u003e day-3 check-in",
+  "durawork": {
+    "boundaries_tested": 23,
+    "boundaries_passed": 23,
+    "results": [
+      {
+        "boundary": "wf-start",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-activity-0",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "mid-activity-0",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-activity-0",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-activity-1",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "mid-activity-1",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-activity-1",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-signal-2",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-signal-2",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-activity-3",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "mid-activity-3",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-activity-3",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-timer-4",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-timer-4",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-activity-5",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "mid-activity-5",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-activity-5",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-timer-6",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-timer-6",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-activity-7",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "mid-activity-7",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-activity-7",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-complete",
+        "killed": true,
+        "oracle_pass": true
+      }
+    ]
+  },
+  "naive_baseline": {
+    "boundaries_tested": 31,
+    "boundaries_passed": 18,
+    "results": [
+      {
+        "boundary": "wf-start",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-activity-0",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "mid-activity-0",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect account_created count=2, want exactly 1 (all: map[account_created:2 email_sent:checkin_day2:1 email_sent:checkin_day3:1 email_sent:welcome:1 workspace_provisioned:1])"
+      },
+      {
+        "boundary": "post-activity-0",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-activity-1",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "mid-activity-1",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect email_sent:welcome count=2, want exactly 1 (all: map[account_created:1 email_sent:checkin_day2:1 email_sent:checkin_day3:1 email_sent:welcome:2 workspace_provisioned:1])"
+      },
+      {
+        "boundary": "post-activity-1",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-signal-2",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-signal-2",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-activity-3",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "mid-activity-3",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect workspace_provisioned count=2, want exactly 1 (all: map[account_created:1 email_sent:checkin_day2:1 email_sent:checkin_day3:1 email_sent:welcome:1 workspace_provisioned:2])"
+      },
+      {
+        "boundary": "post-activity-3",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-timer-4",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-timer-4",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-activity-5",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "mid-activity-5",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect email_sent:checkin_day2 count=2, want exactly 1 (all: map[account_created:1 email_sent:checkin_day2:2 email_sent:checkin_day3:1 email_sent:welcome:1 workspace_provisioned:1])"
+      },
+      {
+        "boundary": "post-activity-5",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-timer-6",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "post-timer-6",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-activity-7",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "mid-activity-7",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect email_sent:checkin_day3 count=2, want exactly 1 (all: map[account_created:1 email_sent:checkin_day2:1 email_sent:checkin_day3:2 email_sent:welcome:1 workspace_provisioned:1])"
+      },
+      {
+        "boundary": "post-activity-7",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "pre-complete",
+        "killed": true,
+        "oracle_pass": true
+      },
+      {
+        "boundary": "ckptwrite-0",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect account_created count=2, want exactly 1 (all: map[account_created:2 email_sent:checkin_day2:1 email_sent:checkin_day3:1 email_sent:welcome:1 workspace_provisioned:1])"
+      },
+      {
+        "boundary": "ckptwrite-1",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect account_created count=2, want exactly 1 (all: map[account_created:2 email_sent:checkin_day2:1 email_sent:checkin_day3:1 email_sent:welcome:2 workspace_provisioned:1])"
+      },
+      {
+        "boundary": "ckptwrite-2",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect account_created count=2, want exactly 1 (all: map[account_created:2 email_sent:checkin_day2:1 email_sent:checkin_day3:1 email_sent:welcome:2 workspace_provisioned:1])"
+      },
+      {
+        "boundary": "ckptwrite-3",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect email_sent:welcome count=2, want exactly 1 (all: map[account_created:2 email_sent:checkin_day2:1 email_sent:checkin_day3:1 email_sent:welcome:2 workspace_provisioned:2])"
+      },
+      {
+        "boundary": "ckptwrite-4",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect account_created count=2, want exactly 1 (all: map[account_created:2 email_sent:checkin_day2:1 email_sent:checkin_day3:1 email_sent:welcome:2 workspace_provisioned:2])"
+      },
+      {
+        "boundary": "ckptwrite-5",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect account_created count=2, want exactly 1 (all: map[account_created:2 email_sent:checkin_day2:2 email_sent:checkin_day3:1 email_sent:welcome:2 workspace_provisioned:2])"
+      },
+      {
+        "boundary": "ckptwrite-6",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect email_sent:checkin_day2 count=2, want exactly 1 (all: map[account_created:2 email_sent:checkin_day2:2 email_sent:checkin_day3:1 email_sent:welcome:2 workspace_provisioned:2])"
+      },
+      {
+        "boundary": "ckptwrite-7",
+        "killed": true,
+        "oracle_pass": false,
+        "detail": "effect account_created count=2, want exactly 1 (all: map[account_created:2 email_sent:checkin_day2:2 email_sent:checkin_day3:2 email_sent:welcome:2 workspace_provisioned:2])"
+      }
+    ]
+  },
+  "mid_activity_crashes": {
+    "durawork": {
+      "passed": 5,
+      "tested": 5
+    },
+    "naive_baseline": {
+      "passed": 0,
+      "tested": 5
+    }
+  },
+  "functional_scenarios": {
+    "approval_timeout": true,
+    "reject_path": true
+  },
+  "determinism_contract": {
+    "detected": true,
+    "effects_after_divergence_attempt": 2,
+    "exit_code_v2": 4,
+    "parked": true,
+    "reason": "non-determinism at command 1: history recorded activity \"step_b\", replay issued activity \"step_inserted\"",
+    "scenario": "start under code v1, kill -9 after step_a and step_b are recorded, restart under code v2 (step inserted at command 1)"
+  }
+}
